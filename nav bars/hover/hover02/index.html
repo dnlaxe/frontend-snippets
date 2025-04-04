@@ -1,0 +1,139 @@
+<!-- inspired by https://www.jordangilroy.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Letter scrolling navbar</title>
+  <style>
+
+    ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .word-letter-scroll {
+      display: inline-flex;
+      overflow: hidden;
+      height: 24px;
+      /* prevents letters from overlapping */
+      /* gap: 0.05em; */
+    }
+
+    .letter-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translateY(0);
+    }
+
+    .letter {
+      height: 24px;
+      line-height: 24px;
+      font-size: 20px;
+    }
+
+    .nav-link .letter-stack {
+      transition: transform 0.4s ease;
+    }
+
+    /* Hover-in: scroll up */
+    .nav-link:hover .letter-stack:nth-child(1) { transition-delay: 0s; }
+    .nav-link:hover .letter-stack:nth-child(2) { transition-delay: 0.05s; }
+    .nav-link:hover .letter-stack:nth-child(3) { transition-delay: 0.1s; }
+    .nav-link:hover .letter-stack:nth-child(4) { transition-delay: 0.15s; }
+    .nav-link:hover .letter-stack:nth-child(5) { transition-delay: 0.2s; }
+    .nav-link:hover .letter-stack:nth-child(6) { transition-delay: 0.25s; }
+    .nav-link:hover .letter-stack:nth-child(7) { transition-delay: 0.3s; }
+    .nav-link:hover .letter-stack:nth-child(8) { transition-delay: 0.35s; }
+    .nav-link:hover .letter-stack:nth-child(9) { transition-delay: 0.4s; }
+
+    /* Hover-out: scroll down */
+    .nav-link:not(:hover) .letter-stack:nth-child(1) { transition-delay: 0.4s; }
+    .nav-link:not(:hover) .letter-stack:nth-child(2) { transition-delay: 0.35s; }
+    .nav-link:not(:hover) .letter-stack:nth-child(3) { transition-delay: 0.3s; }
+    .nav-link:not(:hover) .letter-stack:nth-child(4) { transition-delay: 0.25s; }
+    .nav-link:not(:hover) .letter-stack:nth-child(5) { transition-delay: 0.2s; }
+    .nav-link:not(:hover) .letter-stack:nth-child(6) { transition-delay: 0.15s; }
+    .nav-link:not(:hover) .letter-stack:nth-child(7) { transition-delay: 0.1s; }
+    .nav-link:not(:hover) .letter-stack:nth-child(8) { transition-delay: 0.05s; }
+    .nav-link:not(:hover) .letter-stack:nth-child(9) { transition-delay: 0s; }
+
+    /* Movement */
+    .nav-link:hover .letter-stack {
+      transform: translateY(-24px);
+    }
+
+    .nav-link:not(:hover) .letter-stack {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li>
+        <a href="#" class="nav-link">
+          <span class="word-letter-scroll">
+            <span class="letter-stack"><span class="letter">H</span><span class="letter">H</span></span>
+            <span class="letter-stack"><span class="letter">o</span><span class="letter">o</span></span>
+            <span class="letter-stack"><span class="letter">m</span><span class="letter">m</span></span>
+            <span class="letter-stack"><span class="letter">e</span><span class="letter">e</span></span>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" class="nav-link">
+          <span class="word-letter-scroll">
+            <span class="letter-stack"><span class="letter">S</span><span class="letter">S</span></span>
+            <span class="letter-stack"><span class="letter">e</span><span class="letter">e</span></span>
+            <span class="letter-stack"><span class="letter">r</span><span class="letter">r</span></span>
+            <span class="letter-stack"><span class="letter">v</span><span class="letter">v</span></span>
+            <span class="letter-stack"><span class="letter">i</span><span class="letter">i</span></span>
+            <span class="letter-stack"><span class="letter">c</span><span class="letter">c</span></span>
+            <span class="letter-stack"><span class="letter">e</span><span class="letter">e</span></span>
+            <span class="letter-stack"><span class="letter">s</span><span class="letter">s</span></span>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" class="nav-link">
+          <span class="word-letter-scroll">
+            <span class="letter-stack"><span class="letter">A</span><span class="letter">A</span></span>
+            <span class="letter-stack"><span class="letter">b</span><span class="letter">b</span></span>
+            <span class="letter-stack"><span class="letter">o</span><span class="letter">o</span></span>
+            <span class="letter-stack"><span class="letter">u</span><span class="letter">u</span></span>
+            <span class="letter-stack"><span class="letter">t</span><span class="letter">t</span></span>
+          </span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" class="nav-link">
+          <span class="word-letter-scroll">
+            <span class="letter-stack"><span class="letter">C</span><span class="letter">C</span></span>
+            <span class="letter-stack"><span class="letter">o</span><span class="letter">o</span></span>
+            <span class="letter-stack"><span class="letter">n</span><span class="letter">n</span></span>
+            <span class="letter-stack"><span class="letter">t</span><span class="letter">t</span></span>
+            <span class="letter-stack"><span class="letter">a</span><span class="letter">a</span></span>
+            <span class="letter-stack"><span class="letter">c</span><span class="letter">c</span></span>
+            <span class="letter-stack"><span class="letter">t</span><span class="letter">t</span></span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+</body>
+</html>

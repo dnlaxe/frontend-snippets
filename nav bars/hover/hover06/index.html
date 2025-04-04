@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Navbar Hover Fill from Bottom</title>
+  <style>
+
+    .navbar {
+      display: flex;
+    }
+
+    .navbar a {
+      position: relative;
+      text-decoration: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .navbar a::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 0;
+      background-color: black;
+      z-index: -1;
+      transition: height 0.3s ease;
+    }
+
+    .navbar a:hover::before {
+      height: 100%;
+    }
+
+    .navbar a:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="navbar">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+</body>
+</html>
