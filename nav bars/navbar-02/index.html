@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scrolling Navbar</title>
+  <style>
+ 
+    ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      display: inline-block;
+      overflow: hidden;
+      /* this should be same as .word heigh and line height */
+      height: 24px;
+    }
+
+    .word-container {
+      display: block;
+      transition: transform 0.3s ease;
+      transform: translateY(0%);
+    }
+
+    .word {
+      display: block;
+      height: 24px;
+      line-height: 24px;
+    }
+
+    .nav-link:hover .word-container {
+      transform: translateY(-24px);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li>
+        <a href="#" class="nav-link">
+          <span class="word-container">
+            <span class="word">Home</span>
+            <span class="word">Home</span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          <span class="word-container">
+            <span class="word">Services</span>
+            <span class="word">Services</span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          <span class="word-container">
+            <span class="word">About</span>
+            <span class="word">About</span>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          <span class="word-container">
+            <span class="word">Contact</span>
+            <span class="word">Contact</span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+</body>
+</html>
