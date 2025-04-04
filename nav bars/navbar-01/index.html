@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nav Highlight</title>
+  <style>
+
+.nav {
+  display: inline-block;
+}
+
+.links {
+  position: relative;
+  display: flex;
+}
+
+.link-item {
+  z-index: 1;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.link-item.active {
+  color: white;
+}
+
+.highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgb(34, 34, 34);;
+  z-index: 0;
+  transition: all 0.2s ease-in;
+  width: 0;
+  pointer-events: none;
+}
+
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="links">
+      <div class="link-item">Home</div>
+      <div class="link-item">About</div>
+      <div class="link-item">Contact</div>
+      <div class="highlight"></div>
+    </div>
+  </nav>
+
+  <script>
+const links = document.querySelectorAll('.link-item');
+const highlight = document.querySelector('.highlight');
+const container = document.querySelector('.links');
+
+links.forEach(link => {
+  link.addEventListener('click', () => {
+    // Move highlight
+    highlight.style.left = `${link.offsetLeft}px`;
+    highlight.style.width = `${link.offsetWidth}px`;
+
+    // Remove active from all
+    links.forEach(l => l.classList.remove('active'));
+    // Add active to clicked
+    link.classList.add('active');
+  });
+});
+
+// Optional: Set initial active
+links[0].click();
+
+  </script>
+
+</body>
+</html>
