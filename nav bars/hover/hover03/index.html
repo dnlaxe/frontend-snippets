@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vertical Navbar with Arrow Hover</title>
+  <style>
+
+
+    .sidebar {
+      width: 200px;
+      height: 100vh;
+    }
+
+    .nav-link {
+      position: relative;
+      display: block;
+      /* padding: 0.75rem 1rem 0.75rem 2rem; */
+      text-decoration: none;
+      transition: padding-left 0.3s ease;
+    }
+
+    .nav-link::before {
+      content: "➜";
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%) translateX(-10px);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-link:hover::before {
+      transform: translateY(-50%) translateX(0);
+      opacity: 1;
+    }
+
+    .nav-link:hover {
+      /* distance between arrow and word defined by this and navlink before left */
+      padding-left: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="sidebar">
+    <a href="#" class="nav-link">Dashboard</a>
+    <a href="#" class="nav-link">Settings</a>
+    <a href="#" class="nav-link">Profile</a>
+    <a href="#" class="nav-link">Messages</a>
+    <a href="#" class="nav-link">Logout</a>
+  </nav>
+
+</body>
+</html>
