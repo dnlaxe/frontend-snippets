@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flipping Nav Links</title>
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .nav-link span {
+      display: inline-block;
+      transition: transform 0.5s ease;
+      transform-style: preserve-3d;
+      transform-origin: center center;
+    }
+
+    .nav-link:hover span {
+      transform: rotateX(180deg);
+    }
+
+    .nav-link span::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotateX(180deg);
+      backface-visibility: hidden;
+      color: grey;
+    }
+
+    .nav-link span {
+      position: relative;
+      backface-visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="nav-link"><span data-text="Home">Home</span></a>
+    <a href="#" class="nav-link"><span data-text="About">About</span></a>
+    <a href="#" class="nav-link"><span data-text="Services">Services</span></a>
+    <a href="#" class="nav-link"><span data-text="Contact">Contact</span></a>
+  </nav>
+</body>
+</html>
