@@ -7,7 +7,7 @@ A simple and fun hover animation for navigation links where an arrow sweeps thro
 When you hover over a link:
 
 contact
->ontact 
+\>ontact 
 ->ntact 
 -->tact 
 c-->act 
