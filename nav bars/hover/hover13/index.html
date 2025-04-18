@@ -2,60 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Glowing Nav Bar Links</title>
+  <title>Glow-Up Nav Hover</title>
+  <link rel="stylesheet" href="../../../styles.css">
   <style>
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
+nav {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: #333;
+}
 
-    nav ul {
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
+nav ul {
+  display: flex;
+  gap: 2rem;
+}
 
-    nav ul li {
-      list-style: none;
-    }
 
-    nav ul li a {
-      position: relative;
-      display: block;
-      text-align: center;
-      background: #333;
-      color: #666;
-      text-decoration: none;
-      transition: .5s;
-    }
+nav ul li {
+  list-style: none;
+}
 
-    nav ul li a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: #ffee10;
-      transition: .5s;
-      transform: scale(0.9);
-      z-index: -1;
-    }
+nav ul li a {
+  padding: 1rem;
+  border-radius: 10%;
+  position: relative;
+  display: block;
+  text-align: center;
+  background: #333;
+  color: #666;
+  text-decoration: none;
+  transition: .5s;
+}
 
-    nav ul li a:hover::before {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px #ffee10;
-    }
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  background: #ffee10;
+  transition: .5s;
+  transform: scale(0.9);
+  z-index: -1;
+}
 
-    nav ul li a:hover {
-      color: #ffee10;
-      box-shadow: 0 0 5px #ffee10;
-      text-shadow: 0 0 5px #ffee10;
-    }
+nav ul li a:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffee10;
+  }
+
+nav ul li a:hover {
+  color: #ffee10;
+  box-shadow: 0 0 5px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+}
+
   </style>
 </head>
 <body>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Sweep Nav</title>
+  <link rel="stylesheet" href="../../../styles.css">
+  <style>
+
+    .nav {
+      display: flex;
+    }
+
+    .nav a {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <script>
+    function animateArrow(element) {
+      const original = element.dataset.text;
+      const chars = original.split('');
+      const steps = [];
+
+      const length = chars.length;
+
+      for (let i = 0; i < length + 3; i++) {
+        let frame = [...chars];
+
+        if (i - 2 >= 0 && i - 2 < length) frame[i - 2] = '-';
+        if (i - 1 >= 0 && i - 1 < length) frame[i - 1] = '-';
+        if (i < length) frame[i] = '>';
+
+        steps.push(frame.join(''));
+      }
+
+      steps.push(original);
+
+      let i = 0;
+      const interval = setInterval(() => {
+        element.textContent = steps[i];
+        i++;
+        if (i >= steps.length) {
+          clearInterval(interval);
+        }
+      }, 80);
+    }
+
+    document.querySelectorAll('.nav a').forEach(el => {
+      el.dataset.text = el.textContent;
+      el.addEventListener('mouseenter', () => animateArrow(el));
+    });
+  </script>
+</body>
+</html>
